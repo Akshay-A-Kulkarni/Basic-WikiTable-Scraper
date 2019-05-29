@@ -27,7 +27,7 @@ def getsummary(x):
         try:
             summary = wiki.page(city,auto_suggest=True, redirect=True).summary
         except (wikipedia.exceptions.DisambiguationError) as e:
-            summary = "Summary not be fetched due to disambiguation"
+            summary = "Summary not fetched due to disambiguation"
         summaries.append(summary)
     return summaries
     
@@ -68,5 +68,5 @@ table_df['Longitude'] = table_df['Location'].str.rpartition(' ')[2].str.replace(
 
 
 
-table_df.to_csv("scraped_data2.csv",encoding='utf-8-sig',index=False) # using utf-8-sig encoding to strip off the UTF-8 Byte Order Mark
+table_df.to_csv("scraped_data.csv",encoding='utf-8-sig',index=False) # using utf-8-sig encoding to strip off the UTF-8 Byte Order Mark
 

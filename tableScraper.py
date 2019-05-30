@@ -26,7 +26,7 @@ def getsummary(x):
     for city in list(x):
         try:
             summary = wiki.page(city,auto_suggest=True, redirect=True).summary
-        except (wikipedia.exceptions.DisambiguationError) as e:
+        except (wiki.exceptions.DisambiguationError) as e:
             summary = "Summary not fetched due to disambiguation"
         summaries.append(summary)
     return summaries
